@@ -1,6 +1,6 @@
 <%-- 
-    Document   : hennsuu
-    Created on : 2017/12/18, 14:15:06
+    Document   : loop_for
+    Created on : 2017/12/20, 10:49:23
     Author     : yoshiiakiko
 --%>
 
@@ -12,11 +12,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-   <%
-    String s = "こんにちは。";
-    s = s +"私は芳井明子です。";
-    out.println(s);
+    <%
+    //for文を利用して、8を20回掛ける処理を実現してください。（8の20乗）
+    
+    long num = 1;
+    for(int i=1; i<20; i++){
+    num *= 8;
+    out.println(num);
+    }
 
-%>
+    %>
+     
     </body>
 </html>
