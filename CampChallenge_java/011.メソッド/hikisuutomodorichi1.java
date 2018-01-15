@@ -18,27 +18,23 @@ import javax.servlet.http.HttpServletResponse;
 //引数が１つのメソッドを作成してください。
 //メソッドの中の処理は、３人分のプロフィール（項目は戻り値2と同様）を作成し、引数として渡された値と同じIDを持つ人物のプロフィールを返却する様にしてください。
 //それ以降は課題「戻り値2」と同じ処理にしてください。
-
-
-//プロフィール３個作る
 public class hikisuutomodorichi1 extends HttpServlet {
-    String[] ourData(PrintWriter pw, String num1) {
+
+
+    String[] ourData(int num) {
+        //プロフィール３個作る
+        String[] aData = {"1", "aki", "19911202", "nippori"};
+        String[] bData = {"2", "ifi", "19960224", "nippori"};
+        String[] cData = {"3", "kana", "19960221", "titosehunabashi"};
+
+        if (num == 1) {return aData;
+        } else if (num == 2) {return bData;
+        } else {return cData;
+        }
+
+        //受け取る引数で表示するプロフィール異なる
         
-    String[] aData = {"num1","aki","19911202","nippori"};
-    String[] bData = {"num2", "ifi", "19960224","nippori"};
-    String[] cData = {"num3", "kana", "19960221","titisehunabashi"};
-    
-    //プロフィールを表示する
-    
-             
-             
-             //受け取る引数で表示するプロフィール異なる
-             if 
-    
-    
-    
-            
-}
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -52,18 +48,20 @@ public class hikisuutomodorichi1 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try (PrintWriter pw = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-             
-//プロフィール表示
- 
-}
-            ourData(out);
-            
+            String[] result = ourData(2);
+
+            //プロフィールを表示する
+            pw.println(result[1]);
+            pw.println(result[2]);
+            pw.println(result[3]);
+//プロフィール表示o
         }
+
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
